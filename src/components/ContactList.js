@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SearchForm from "./searchForm";
+import SearchBox from "./SearchBox";
 import ContactItem from "./ContactItem";
 import { useSelector } from "react-redux";
 
@@ -18,13 +18,12 @@ const ContactList = () => {
   }, [keyword]);
   return (
     <div>
-      <SearchForm />
+      <SearchBox />
       <div className="contact-list">
         num:{filteredList.length}
-        {filteredList &&
-          filteredList.map((item) => (
-            <ContactItem phone={item.phone} name={item.name} />
-          ))}
+        {filteredList.map((item) => (
+          <ContactItem item={item} />
+        ))}
       </div>
     </div>
   );

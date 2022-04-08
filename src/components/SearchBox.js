@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 
-const SearchForm = () => {
+const SearchBox = () => {
   let [keyword, setKeyword] = useState("");
   let dispatch = useDispatch();
   let { contact } = useSelector((state) => state);
@@ -28,4 +28,4 @@ const SearchForm = () => {
   );
 };
 
-export default SearchForm;
+export default SearchBox;

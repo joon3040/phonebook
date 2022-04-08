@@ -3,13 +3,13 @@ import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 const ContactForm = () => {
   let [name, setName] = useState("");
-  let [phone, setPhone] = useState("");
+  let [phoneNumber, setPhoneNumber] = useState("");
   let dispatch = useDispatch();
   const createContact = (event) => {
     event.preventDefault();
-    dispatch({ type: "CREATE_CONTACT", payload: { name, phone } });
+    dispatch({ type: "ADD_CONTACT", payload: { name, phoneNumber } });
     setName("");
-    setPhone("");
+    setPhoneNumber("");
   };
   return (
     <Form onSubmit={(event) => createContact(event)}>
@@ -29,8 +29,8 @@ const ContactForm = () => {
         <Form.Control
           type="text"
           placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </Form.Group>
 

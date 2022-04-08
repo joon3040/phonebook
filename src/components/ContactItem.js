@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-const ContactItem = ({ name, phone }) => {
+const ContactItem = ({ item }) => {
   return (
     <div className="contact-item">
       <Row>
@@ -13,8 +13,8 @@ const ContactItem = ({ name, phone }) => {
           />
         </Col>
         <Col lg="10">
-          <h4>{name}</h4>
-          <p>{phone}</p>
+          <h4>{item.name}</h4>
+          <p>{item.phoneNumber}</p>
         </Col>
       </Row>
     </div>
