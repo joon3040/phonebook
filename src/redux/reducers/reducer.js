@@ -1,5 +1,5 @@
 const initialState = {
-  contact: [],
+  contactList: [],
   keyword: "",
 };
 const contactReducer = (state = initialState, action) => {
@@ -8,8 +8,8 @@ const contactReducer = (state = initialState, action) => {
     case "ADD_CONTACT":
       return {
         ...state,
-        contact: [
-          ...state.contact,
+        contactList: [
+          ...state.contactList,
           { name: payload.name, phoneNumber: payload.phoneNumber },
         ],
       };
