@@ -4,25 +4,24 @@ import ContactItem from "./ContactItem";
 import { useSelector } from "react-redux";
 
 const ContactList = () => {
-  const { contact, keyword } = useSelector((state) => state);
+  const { contactList, keyword } = useSelector((state) => state);
   let [filteredList, setFilteredList] = useState([]);
-
   useEffect(() => {
     if (keyword !== "") {
-      let list = contact.filter((item) => item.name.includes(keyword));
+      let list = contactList.filter((item) => item.name.includes(keyword));
 
       setFilteredList(list);
     } else {
-      setFilteredList(contact);
+      setFilteredList(contactList);
     }
-  }, [keyword]);
+  }, [keyword, contactList]);
   return (
     <div>
       <SearchBox />
       <div className="contact-list">
         num:{filteredList.length}
-        {filteredList.map((item) => (
-          <ContactItem item={item} />
+        {filteredList.map((item, index) => (
+          <ContactItem item={item} key={index} />
         ))}
       </div>
     </div>
