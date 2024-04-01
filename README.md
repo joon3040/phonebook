@@ -1,3 +1,6 @@
+리액트를 활용하여 연락처 추가, 검색 기능을 가진 홈페이지 
+도메인주소:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
